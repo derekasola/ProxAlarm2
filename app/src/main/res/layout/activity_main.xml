@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+        
+        <LinearLayout
+            android:id="@+id/MainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_weight="50"
+            android:gravity="top"
+            app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:focusable="auto"
+                app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/MainLayout">
+            
+            <Button
+                android:id="@+id/new_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:text="@string/button_text" />
+            
+            <Button
+                android:id="@+id/saved_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:text="@string/saved_button" />
+        
+        
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/bottomLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/appLayout"
+            app:layout_constraintEnd_toEndOf="@id/appLayout"
+            app:layout_constraintStart_toStartOf="@id/appLayout"
+            app:layout_constraintTop_toBottomOf="@id/MainLayout">
+            
+            
+            <LinearLayout
+                android:id="@+id/bottomLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/appLayout"
+                app:layout_constraintEnd_toEndOf="@id/appLayout"
+                app:layout_constraintStart_toStartOf="@id/appLayout"
+                app:layout_constraintTop_toBottomOf="@id/MainLayout">
+                
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="Button" />
+                
+                <Button
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal|top|center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:text="@string/back_button" />
+                
+                <Button
+                    android:id="@+id/startButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center|right|top"
+                    android:layout_weight="1"
+                    android:text="@string/save_button" />
+                
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_gravity="center|right|top"
+                    android:layout_weight="1"
+                    android:text="Button" />
+            
+            
+            </LinearLayout>
+            
+            <SeekBar
+                android:id="@+id/seekBarIncreaseRadius"
+                android:layout_marginTop="20dp"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|bottom"
+                android:clickable="true"
+                android:min="100"
+                android:max="1500" />
+        
+        
+        </LinearLayout>
+    
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
